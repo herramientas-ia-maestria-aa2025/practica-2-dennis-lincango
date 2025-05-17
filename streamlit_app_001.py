@@ -3,12 +3,14 @@ import mlflow.sklearn
 import numpy as np
 
 st.title("Predicción de Diabetes")
+st.title("Lincango Dennis")
+
 
 # Configurar conexión con MLflow Tracking Server
-pass
+mlflow.set_tracking_uri("http://localhost:9090")
 
 # Cargar modelo desde el Model Registry, revise el ejemplo de flask
-pass
+model = mlflow.sklearn.load_model("models:/diabetes-practica-lincango-dennis/3")
 
 # Deslizadores para cada input del modelo
 pregnancies = st.slider("Número de embarazos", 0, 20, 1)
